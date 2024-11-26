@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Recipe List</h2>
+<ul>
+    {% for recipe in recipes %}
+        <li>
+            <strong>{{ recipe.title }}</strong>
+            <p>{{ recipe.ingredients }}</p>
+            <p>{{ recipe.instructions }}</p>
+        </li>
+    {% else %}
+        <p>No recipes available.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

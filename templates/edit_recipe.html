@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editează rețetă</title>
+</head>
+<body>
+    <h1>Editează rețeta: {{ recipe.title }}</h1>
+    <form method="POST">
+        <label for="title">Titlu:</label>
+        <input type="text" id="title" name="title" value="{{ recipe.title }}" required><br><br>
+        <label for="ingredients">Ingrediente:</label>
+        <textarea id="ingredients" name="ingredients" required>{{ recipe.ingredients }}</textarea><br><br>
+        <label for="instructions">Instrucțiuni:</label>
+        <textarea id="instructions" name="instructions" required>{{ recipe.instructions }}</textarea><br><br>
+        <button type="submit">Actualizează rețeta</button>
+    </form>
+    <a href="{{ url_for('index') }}">Înapoi la rețete</a>
+</body>
+</html>

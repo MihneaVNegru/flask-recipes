@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Add a Recipe</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.title.label }}<br>
+        {{ form.title(size=40) }}
+    </div>
+    <div>
+        {{ form.ingredients.label }}<br>
+        {{ form.ingredients(rows=4, cols=40) }}
+    </div>
+    <div>
+        {{ form.instructions.label }}<br>
+        {{ form.instructions(rows=4, cols=40) }}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}
